@@ -1,0 +1,22 @@
+{
+  "name": "artifact3",
+  "version": "1.0.0",
+  "description": "Node.js + Express tutorial server hosting a 'Hello world' endpoint (GET /) and a 'Good evening' endpoint (GET /good-evening).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "tutorial",
+    "http"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
