@@ -27,6 +27,13 @@ app.get('/good-evening', (req, res) => res.send('Good evening'));
 // defaults to 3000 (the conventional Express tutorial pattern).
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+// In Express 5, app.listen forwards bind failures (e.g. EADDRINUSE) to this
+// callback as its first argument. Accept and rethrow that error so startup
+// failures surface as a non-zero exit instead of being silently logged as a
+// successful start.
+app.listen(PORT, (error) => {
+  if (error) {
+    throw error;
+  }
   console.log(`Server listening on port ${PORT}`);
 });
